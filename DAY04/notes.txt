@@ -1,0 +1,76 @@
+How to integrate with slack?
+=============================
+
+step 1: login slack.com
+
+step 2: channels --> chanel --> create channel --> channel name --> next --> public --> create
+
+step 3: 
+
+    KK FUNDA --> Invite pople to kk funda --> copy invite link 
+
+   https://join.slack.com/t/kkfunda/shared_invite/zt-2nxl4nw11-LipxXvOotWPmIIPjFgw
+
+
+step 4: KK FUNDA --> tools and settings --> manage apps --> search with "jenkins ci" --> click on "Add to slack" --> select a channel --> Add jenkins ci integration --> 
+
+https://kkfunda.slack.com/services/B08FJJN9ELX?added=1
+
+step 5: install slack notification plugin in jenkins
+
+step 6: manage jenkins --> configure systems --> slack --> workspace: kkfunda -->
+
+   credentials: Add credentials --> Secret text --> paste the secret[lHCwhkIRdaeAqZlR] --> add the description
+
+    default channel: #jio ---> Test connection --> save
+
+step 7: 
+
+select job --> configure --> scroll down to end --> post build actions --> select slack notifications 
+
+--> select slack notifications --> advanced --> select options[enter the specific channel-id] --> save 
+
+
+======================================================================================
+
+Jenkins security
+================
+
+--> procedure of providing security to the jenkins server called as jenkins security.
+
+IQ] where the jenkins users information will store?
+
+Ans: /var/lib/jenkins/users/users.xml
+
+
+For example
+===========
+
+kkfunda --> devops engineer --> admin
+prasanth --> devops engineer
+mani --> devops engineer
+
+jaswanth --> developer     
+raghu    --> developer
+
+IQ] How to create a user in jenkins?
+
+manage jenkins --> manage users --> create users --> 
+
+  uname :prasanth
+  pwd   :kkfunda
+  conform pwd: kkfunda
+  full name: prasanth
+  email: abc@gmail.com
+
+NOTE: by default every user has admin access , How to give read access to developers?
+
+--> [Install role based authorization startegy  plugin]
+
+--> login as a admin	--> manage jenkins --> security --> security --> authentication --> Authorization 
+
+--> select Project based matrix Authorization Strategy
+
+NOTE: add all users and give the permissions, check the activities.
+
+NOTE: pls give job level acces to users.
